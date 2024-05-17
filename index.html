@@ -1,0 +1,389 @@
+<html>
+    <head>
+        <title>Elaruu - Your home of facts and stats</title>
+        <link rel="icon" type="image/x-icon" href="./icon-profile.ico">
+    </head>
+    <style>
+        body {
+            font-family: Arial;
+            margin:0px;
+            
+            height: 350px;
+            
+        }
+
+        /* Style the tab */
+        .tab {
+        overflow: hidden;
+        background-color: white;
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 10px 16px 5px 16px;
+        transition: 0.3s;
+        font-size: 12px;
+        border: 1px solid black;
+        border-width: 0px 1px 1px 0px;
+        border-radius: 0px 0px 10px 10px;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+        padding: 10px 16px 10px 16px;
+        }
+
+        /* Create an active/current tablink class */
+        .tab button.active {
+        padding: 10px 16px 10px 16px;
+        background-color: #ccc;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        -webkit-animation: fadeEffect 1s;
+        animation: fadeEffect 1s;
+        }
+
+        /* Fade in tabs */
+        @-webkit-keyframes fadeEffect {
+        from {opacity: 0;}
+        to {opacity: 1;}
+        }
+
+        @keyframes fadeEffect {
+        from {opacity: 0;}
+        to {opacity: 1;}
+        }
+        .wiki{
+            width:100%;
+            height: 90vh;
+            border: none;
+            position: absolute;
+            top:0;
+            left:0;
+        }
+        .coverup{
+            width:100%;
+            height:50px;
+            z-index: 100;
+            position: absolute;
+            top:0;
+            left:0;
+            background-color: white;
+        }
+        .wikibox{
+            width:100%;
+            position:relative;
+        }
+        * {
+  box-sizing: border-box;
+}
+
+.body {
+  font-family: Helvetica, sans-serif;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+  border: 1px solid black;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent black;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent black transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+  border: 1px solid black
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+  left: 31px;
+  }
+  
+  /* Full-width containers */
+  .container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+  left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .right {
+  left: 0%;
+  }
+}
+    </style>
+    <body>
+        <div class="tab">
+            <button class="tablinks" onclick="openPage(event, 'Home')">Home</button>
+            <button class="tablinks" onclick="openPage(event, 'About')">About</button>
+            <button class="tablinks" onclick="openPage(event, 'Links')">Links</button>
+            <button class="tablinks" onclick="openPage(event, 'Games')">Games</button>
+            <button class="tablinks" onclick="openPage(event, 'History')">History</button>
+            <button class="tablinks" onclick="openPage(event, 'Wiki')">Wiki</button>
+        </div>
+        
+        <div id="Home" class="tabcontent">
+        <h1>Elaruu.W3spaces.Com</h1>
+        <h3>Your home of the latest elaruu facts and stats</h3>
+        <p>Click the tabs above to explore!</p>
+        </div>
+        
+        
+        
+        <div id="Links" class="tabcontent">
+        <h3>QuickLinks</h3>
+        <p>
+            <a href="https://scratch.mit.edu/users/elaruu">Scratch Account</a><br>
+            <a href="https://scratchstats.com/elaruu">Scratchstats</a><br>
+            <a href="https://elaruu.wixsite.com/wiki">Wiki</a><br>
+            <a href="https://sratchpeople.fandom.com/elaruu">Wiki (fandom)</a><br>
+            <a href="https://elaruu.w3spaces.com">Website by JamieD132</a><br>
+            <a href="https://sites.google.com/view/elaruu">Website by Btdim1</a><br>
+            <a href="https://api.scratch.mit.edu/users/elaruu">Api.scratch.mit.edu</a><br>
+            <a href="https://api.scratch.mit.edu/users/elaruu/messages/count">Message count</a><br>
+            <a href="https://scratch.mit.edu/search/projects?q=elaruu">Related projects</a><br>
+            <a href="https://scratch.mit.edu/search/studios?q=elaruu">Related studios</a><br>
+            <a href="https://google.com/search?q=elaruu">Related websites</a>
+        </p>
+        </div>
+
+        <div id="Games" class="tabcontent">
+            <div class="wikibox">
+                <iframe src="https://elaruu.wixsite.com/games" class="wiki"></iframe>
+                <div class="coverup"><h3>Elaruu Games</h3></div></div>
+            </div>
+
+        <div id="History" class="tabcontent">
+            <h3>History of elaruu</h3>
+            <div class="body">
+                <div class="timeline">
+                  <div class="container left">
+                    <div class="content">
+                      <h2>29 Oct 2022</h2>
+                      <p>Elaruu joined scratch at 8:58 and 48 seconds, AEST.</p>
+                    </div>
+                  </div>
+                  <div class="container right">
+                    <div class="content">
+                      <h2>31 Oct 2022</h2>
+                      <p>JamieD132 found elaruu for the first time, followed them, and commented the first thing on their profile. Shortly after JamieD132's brother also commented and followed.</p>
+                    </div>
+                  </div>
+                  <div class="container left">
+                    <div class="content">
+                      <h2>Sep 2023</h2>
+                      <p>JamieD132 mentioned elaruu on griffpatches profile for the first time, and he did throughout the whole month, asking people to comment "genius, absolute genius" on elaruu's profile.</p>
+                    </div>
+                  </div>
+                  <div class="container right">
+                    <div class="content">
+                      <h2>Late Sep 2023</h2>
+                      <p>Fans started to develop. @hope_in_the_cross was the first elaruu supporter and @dahat_heart_master49 was the first elaruu hater.</p>
+                    </div>
+                  </div>
+                  <div class="container left">
+                    <div class="content">
+                      <h2>Oct 2023</h2>
+                      <p>People started to use elaruu as a chatroom, but only about one comment was made a day. JamieD132 continued to advertise elaruu as a chatroom from then.</p>
+                    </div>
+                  </div>
+                  <div class="container right">
+                    <div class="content">
+                      <h2>30 Oct 2023</h2>
+                      <p>Elaruu's 1 year anniversary was held. It was held one day late by accident. Not many people attended, and none really cared, although elaruu gained about 10 followers from this.</p>
+                    </div>
+                  </div>
+                  <div class="container left">
+                    <div class="content">
+                      <h2>Nov 2023</h2>
+                      <p>JamieD132 noticed how much followers elaruu was gaining and aimed for 100, although he never expected that much. Elaruu reached 700 messages and JamieD132 was really amazed, as he never expected it to be so high.</p>
+                    </div>
+                  </div>
+                  <div class="container right">
+                    <div class="content">
+                      <h2>10 Nov 2023</h2>
+                      <p>Elbrus was discovered and turned into a chatroom by @steichfam.</p>
+                    </div>
+                  </div>
+                  <div class="container left">
+                    <div class="content">
+                      <h2>11 Nov 2023</h2>
+                      <p>By this point Elaruu had reached 100 followers and 7000 messages! Suddenly, Elaruu's comments were closed during a multi-chatroom incident where one griffpatcher started a trend that lead to all griffpatchers contributing to a guideline breaking event and many comment closures across hundreds of profiles.</p>
+                    </div>
+                  </div>
+                  <div class="container right">
+                    <div class="content">
+                      <h2>13 Nov 2023</h2>
+                      <p>Most comments re-opened this day, except elaruu's and a few others, including elbrus.</p>
+                    </div>
+                  </div>
+                  <div class="container left">
+                    <div class="content">
+                      <h2>16 Dec 2023</h2>
+                      <p>After 26 days of comments being closed, elaruu's mysteriously opened again. Elbrus's remained closed, and are still closed to this day.</p>
+                    </div>
+                  </div>
+                  <div class="container right">
+                    <div class="content">
+                      <h2>5 Feb 2024</h2>
+                      <p>After skyrocketing in activity, elaruu had reached 670 followers and 22,000 messages before it's comments were closed again due to mass-reporting.</p>
+                    </div>
+                  </div>
+                  <div class="container left">
+                    <div class="content">
+                      <h2>16 Feb 2024</h2>
+                      <p>11 days later, elaruuians across the globe woke to devastating news. Overnight, the scratchteam had decided to permenantly delete elaruu's account. Elaruuians were flabogasted and imediately started protesting but it was no use. <b>Elaruu remains delted to this day</b></p>
+                    </div>
+                  </div>
+                  <div class="container right">
+                    <div class="content">
+                      <h2><i>NOW</i></h2>
+                      <p>The future of elaruu is in your hands! We can restore it if we find away to convince the scratchteam to have it back! Are you going to just let an entire community fall? Lets come together to <b>BRING BACK ELARUU!!!</b></p>
+                    </div>
+                  </div>
+                </div>
+                </div>
+        </div>
+        <div id="About" class="tabcontent">
+            <h3>Who is elaruu</h3>
+            <p>
+                <i>Written by <a href="https://scratch.mit.edu/users/Btdim1/">Btdim1</a> (I think)</i>
+                <br>A chatroom started by @JamieD132, @elaruu had over 640 followers. @elaruu was sometimes used by griffpatchers for a variety of reasons, but mostly when there was spamming, chat inactivity, ban-speedrunning, comment closures, raids, trolling (even though this has happened on elaruu too) or too many advertisers on griffpatch's profile. @elaruu was however mostly used as an alternative chatroom for non griffpatchers who called themselves "elaruuians" or "elaruuvians". @elaruu has done no activity on scratch(please verify) and is known solely for being a chatroom, even after deletion.
+                <br>Elaruu has sparked a trend of finding random accounts and making chatrooms out of them.
+                <br>Elaruu was deleted for an unknown reason on February 15, 2024, most likely due to mass reporting.
+            </p>
+        </div>
+
+        <div id="Wiki" class="tabcontent">
+            <div class="wikibox">
+            <iframe src="https://elaruu.wixsite.com/wiki" class="wiki"></iframe>
+            <div class="coverup"><h3>Elaruu Wiki</h3></div></div>
+        </div>
+        
+        <script>
+        function openPage(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+        }
+        openPage(event, 'Home')
+        </script>
+    </body>
+</html>
